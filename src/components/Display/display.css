@@ -1,0 +1,41 @@
+/* 
+
+DISPLAY
+
+*/
+
+#display {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.display__heading-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 80px;
+    align-items: center;
+}
+
+.display__price-filter--wrapper {
+    padding: 20px 40px;
+}
+
+.display-movies {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.text--red {
+    color: red;
+}
