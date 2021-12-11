@@ -18,7 +18,7 @@ const Landing = ({ onSearch, setSearchValue, searchValue }) => {
                                 value={searchValue || ''}
                                 onChange={(event) => setSearchValue(event.target.value)}
                                 onKeyPress={(event) => event.key === 'Enter' && onSearch()} />
-                            <div class ="landing__search-btn" onClick={() => onSearch()}>
+                            <div className="landing__search-btn" onClick={() => onSearch()}>
                                 <FontAwesomeIcon icon="search"/>
                             </div>
                         </div>

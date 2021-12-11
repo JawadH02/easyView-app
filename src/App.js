@@ -5,17 +5,18 @@ import {
   Route,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import React from 'react';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/search-movies" exact element={<Search />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/search-movies" element={<Search />} />
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
