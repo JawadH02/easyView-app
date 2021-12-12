@@ -6,17 +6,23 @@ import axios from 'axios';
 
 const Search = () => {
     const searchInput = localStorage.getItem("homeSearch");
-    const [searchValue, setSearchValue] = useState(null);
+    const [searchValue, setSearchValue] = useState(localStorage.getItem("displaySearch"));
     const [movies, setMovies] = useState([]);
+    console.log(searchInput);
 
     function handleSearch() {
-        renderMovies(searchValue)
+        // searchValue === [] ? setSearchValue(null) : renderMovies(searchValue)
+        if (searchValue === []) {
+            setSearchValue("");
+        } else {
+            renderMovies(searchValue)
+        }
         localStorage.removeItem("homeSearch")
         localStorage.setItem("displaySearch", searchValue);
     }
 
     async function renderMovies(searchValue) {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a68a1e716dc10887f9e01a8f4e4ee2b3&query=${searchValue || searchInput}`);
+        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a68a1e716dc10887f9e01a8f4e4ee2b3&query=${searchInput || (searchValue ? searchValue : localStorage.getItem("displaySearch"))}`);
 
         setMovies(data.results);
     }

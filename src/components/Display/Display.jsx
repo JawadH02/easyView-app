@@ -8,7 +8,7 @@ const Display = ({ movies }) => {
     const homeSearch = localStorage.getItem("homeSearch");
     const displaySearch = localStorage.getItem("displaySearch");
     const [val, setVal] = useState([1900, 2020]);
-    console.log(movies);
+
 
     const handleChange = (e, newVal) => {
         setVal(newVal);
@@ -44,23 +44,22 @@ const Display = ({ movies }) => {
                         </div>
                     </div>
                     <div className="display-movies">
-                        {(homeSearch || displaySearch) !== "null" && movies
+                        {((homeSearch || displaySearch) !== null && (homeSearch || displaySearch) !== "") ? movies
                             .slice(0, 8)
-                            .map((movie, index) =>
-                                <Movie movie={movie} key={index} />
+                            .map((movie) =>
+                                <Movie movie={movie} key={movie.id} />
+                            ) : (
+                            (
+                                <div className="display__empty">
+                                    <img src={EmptyDisplay} alt="" className="display__empty--img" />
+                                    <h1 className='display__empty--description'>Could not find any matches related to your search.</h1>
+                                    <p className='display__empty--sub-description'>Please change the filter or reset it below</p>
+                                    <Link to="/books">
+                                        <button className="display__btn">Reset Filter</button>
+                                    </Link>
+                                </div>
                             )
-                        }
-                        {(((homeSearch || displaySearch) === "null") || ((homeSearch || displaySearch) === "")) && (
-                            <div className="cart__empty">
-                                <img src={EmptyDisplay} alt="" className="cart__empty--img" />
-                                <h1>Could not find any matches related to your search.</h1>
-                                <h2>Please change the filter or reset it below</h2>
-                                <Link to="/books">
-                                    <button className="btn">Browse shows</button>
-                                </Link>
-                            </div>
-                        )
-                        }
+                        )}
                     </div>
                 </div>
             </div>

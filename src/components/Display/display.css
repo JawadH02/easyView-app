@@ -39,3 +39,31 @@ DISPLAY
 .text--red {
     color: red;
 }
+
+.display__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.display__empty--img {
+    padding: 40px;
+    max-width: 400px;
+}
+
+.display__empty--description {
+    margin-bottom: 12px;
+}
+
+.display__empty--sub-description {
+    margin-bottom: 12px;
+}
+
+.display__btn {
+    padding: 4px 24px;
+    background-color: #4E2DA3;
+    color: #FFF;
+    border: none;
+}

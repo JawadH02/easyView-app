@@ -92,4 +92,9 @@ a {
         margin-top: 24px;
         width: 400px;
     }
+    
+    .display-movies {
+        display: flex;
+        flex-direction: column;
+    }
 }
