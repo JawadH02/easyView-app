@@ -6,7 +6,7 @@ const Recommended = ({ navigate, base_url, recommendedMovies }) => {
             <div className="movieDetails__row">
                 <div className="movieDetails--top">
                     <h2 className="movieDetails--title--top">
-                        Recommended Books
+                        Recommended Movies
                     </h2>
                 </div>
                 <div className="recommendedMovies" >
