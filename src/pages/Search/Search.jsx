@@ -8,15 +8,10 @@ const Search = () => {
     const searchInput = localStorage.getItem("homeSearch");
     const [searchValue, setSearchValue] = useState(localStorage.getItem("displaySearch"));
     const [movies, setMovies] = useState([]);
-    console.log(searchInput);
 
     function handleSearch() {
-        // searchValue === [] ? setSearchValue(null) : renderMovies(searchValue)
-        if (searchValue === []) {
-            setSearchValue("");
-        } else {
-            renderMovies(searchValue)
-        }
+        searchValue === [] ? setSearchValue(null) : renderMovies(searchValue);
+
         localStorage.removeItem("homeSearch")
         localStorage.setItem("displaySearch", searchValue);
     }

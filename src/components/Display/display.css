@@ -67,3 +67,7 @@ DISPLAY
     color: #FFF;
     border: none;
 }
+
+.display__price-filter-title {
+    font-size: 24px;
+}

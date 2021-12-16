@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import React from 'react';
+import MovieInfo from "./pages/MovieInfo/MovieInfo";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search-movies" element={<Search />} />
+          <Route path="/movie/:id" element={<MovieInfo />} />
         </Routes>
       </div>
     </Router>
