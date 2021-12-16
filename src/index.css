@@ -63,6 +63,24 @@ p {
     .landing__description {
         max-width: 500px;
     }
+
+    .display-movie {
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .movie__selected {
+        flex-direction: column;
+    }
+
+    .movie__selected--figure {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .movie__selected--description {
+        width: 100%;
+    }
 }
 
 /* SMALL PHONES, LARGE SMARTPHONES */
@@ -96,9 +114,5 @@ p {
         margin-top: 24px;
         width: 400px;
     }
-    
-    .display-movies {
-        display: flex;
-        flex-direction: column;
-    }
+
 }
