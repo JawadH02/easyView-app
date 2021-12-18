@@ -13,6 +13,7 @@ const Display = ({ movies }) => {
     const handleChange = (e, newVal) => {
         setVal(newVal);
     }
+
     const marks = [
         {
             value: 1900,
@@ -34,7 +35,7 @@ const Display = ({ movies }) => {
                                 Date range: <span className="text--purple"> {val[0]} to {val[1]}</span>
                             </h2>
                             <Slider
-                                getAriaLabel={() => 'Price'}
+                                getAriaLabel={() => 'Date'}
                                 value={val}
                                 onChange={handleChange}
                                 marks={marks}
@@ -45,6 +46,7 @@ const Display = ({ movies }) => {
                     </div>
                     <div className="display-movies">
                         {((homeSearch || displaySearch) !== null && (homeSearch || displaySearch) !== "") ? movies
+                            .filter(movie => movie.release_date.split("-")[0] >= val[0] && movie.release_date.split("-")[0] <= val[1])
                             .slice(0, 8)
                             .map((movie) =>
                                 <Movie movie={movie} key={movie.id} />

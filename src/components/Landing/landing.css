@@ -76,3 +76,16 @@
 .header__img {
     width: 500px;
 }
+
+/* .loading-state__spinner {
+    animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */

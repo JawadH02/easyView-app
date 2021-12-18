@@ -11,15 +11,18 @@ const Landing = ({ onSearch, setSearchValue, searchValue }) => {
                         <h1 className="landing__description--title">America's most awarded online streaming platform</h1>
                         <h2 className="landing__description--sub-title">Find your dream show with <span className="text--purple">Easy View</span></h2>
                         <div className="landing__form" >
-                            <input 
-                                type="text" 
-                                placeholder="Search by title" 
+                            <input
+                                type="text"
+                                placeholder="Search by title"
                                 className="landing__description--input"
                                 value={searchValue || ''}
                                 onChange={(event) => setSearchValue(event.target.value)}
                                 onKeyPress={(event) => event.key === 'Enter' && onSearch()} />
                             <div className="landing__search-btn" onClick={() => onSearch()}>
-                                <FontAwesomeIcon icon="search"/>
+                                <FontAwesomeIcon icon="search" />
+                                {/* <div class="modal__overlay--loading">
+                                    <FontAwesomeIcon icon="spinner" className="loading-state__spinner" />
+                                </div> */}
                             </div>
                         </div>
                     </div>

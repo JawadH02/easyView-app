@@ -43,10 +43,9 @@ const Nav = () => {
                         Find a movie</Link>
                 </li>
                 <li className="nav__link">
-                    <Link to="/" className={`
+                    <Link to="/contact" className={`
                                 nav__link--anchor
                                 nav__link--anchor-primary
-                                no-cursor
                                 ${isSearchPage ? "nav__link--anchor-secondary" : undefined}`}
                                 id={window.location.pathname === "/search-movies" ? 'active' : undefined}>
                         Contact</Link>
