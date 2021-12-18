@@ -15,7 +15,7 @@ const Movie = ({ movie }) => {
                 if (mountedRef.current) {
                     setImg(image);
                 }
-            }, 100);
+            }, 300);
         }
         return () => {
             mountedRef.current = false;
