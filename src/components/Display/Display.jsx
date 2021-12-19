@@ -45,7 +45,7 @@ const Display = ({ movies }) => {
                         </div>
                     </div>
                     <div className="display-movies">
-                        {((homeSearch || displaySearch) !== null && (homeSearch || displaySearch) !== "") ? movies
+                        {((homeSearch || displaySearch) !== null && (homeSearch || displaySearch) !== "" && (movies[0]) !== undefined) ? movies
                             .filter(movie => movie.release_date.split("-")[0] >= val[0] && movie.release_date.split("-")[0] <= val[1])
                             .slice(0, 8)
                             .map((movie) =>
