@@ -13,16 +13,19 @@ const Search = () => {
     function handleSearch() {
         searchValue === [] ? setSearchValue(null) : renderMovies(searchValue);
 
-        localStorage.removeItem("homeSearch")
-        localStorage.setItem("displaySearch", searchValue);
-        setLoading(true);
+        if (searchValue !== null) {
+            localStorage.removeItem("homeSearch")
+            localStorage.setItem("displaySearch", searchValue);
+            searchValue !== "" && setLoading(true);
+        }
     }
 
     async function renderMovies(searchValue) {
-        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a68a1e716dc10887f9e01a8f4e4ee2b3&query=${searchInput || (searchValue ? searchValue : localStorage.getItem("displaySearch"))}`);
+        const { data } = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=a68a1e716dc10887f9e01a8f4e4ee2b3&query=${searchValue || (searchInput ? searchInput : localStorage.getItem("displaySearch"))}`);
 
         setMovies(data.results);
         setLoading(false)
+        console.log(searchValue)
     }
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import Movie from '../ui/Movie/Movie';
 import './display.css';
 import { useState } from 'react'
-import { Link, Slider } from '@material-ui/core';
+import { Slider } from '@material-ui/core';
 import EmptyDisplay from '../../assets/undraw_searching.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

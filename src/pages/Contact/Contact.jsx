@@ -60,7 +60,7 @@ const Contact = () => {
                         <FontAwesomeIcon icon="spinner" className="modal__overlay--spinner" />
                     </div>
                     <div className={`modal__overlay modal__overlay--success ${success && "modal__overlay--visible"}`}>
-                        <div className="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <div className="wrapper"> <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
                             <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
                             <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                         </svg>

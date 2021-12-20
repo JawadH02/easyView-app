@@ -118,12 +118,12 @@ MODAL
 }
 
 .btn__menu:hover {
-    color: #FF328F;
+    color: #4BE3AC;
 }
 
 .menu__backdrop {
     position: absolute;
-    background-color: #6030b1;
+    background-color: #032D3C;
     top: 0;
     left: 0;
     right: 0;
@@ -165,7 +165,7 @@ MODAL
 }
 
 .menu__link:hover {
-    color: #FF328F;
+    color: #4BE3AC;
 }
 
 .btn__menu--close {
@@ -177,5 +177,5 @@ MODAL
 }
 
 .btn__menu--close:hover {
-    color: #FF328F;
+    color: #4BE3AC;
 }
