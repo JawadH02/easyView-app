@@ -10,16 +10,6 @@ const Faqs = () => {
             open: true,
         },
         {
-            question: 'What are you selling?',
-            answer: 'We are not selling anything. We are simply displaying movies for your convenience.',
-            open: false,
-        },
-        {
-            question: 'Will you regularly keep this site updated?',
-            answer: 'We will be getting feedback from our audience and regularly be updating / adding features.',
-            open: false,
-        },
-        {
             question: 'Do the summary of the movies contain spoilers?',
             answer: 'We get out data from TMDB and they make sure summary does not spoil.',
             open: false,

@@ -99,6 +99,11 @@ p {
     .faq__answer {
         font-size: 14px;
     }
+
+    .display__heading-section {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* SMALL PHONES, LARGE SMARTPHONES */
@@ -121,11 +126,6 @@ p {
 
     .landing__description--sub-title {
         font-size: 20px;
-    }
-
-    .display__heading-section {
-        display: flex;
-        flex-direction: column;
     }
 
     ::placeholder {
