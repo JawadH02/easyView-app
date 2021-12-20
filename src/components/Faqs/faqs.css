@@ -1,0 +1,27 @@
+.faq__container {
+    height: 612px;
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    padding: 40px;
+    background: #032D3C;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    position: relative;
+}
+
+.faq__heading--title {
+    margin: 0 0 30px;
+    font-size: 32px;
+    padding: 0;
+    color: #FFF;
+    text-align: center;
+}
+

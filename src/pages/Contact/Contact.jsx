@@ -3,6 +3,7 @@ import Nav from '../../components/Nav/Nav';
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emailjs from 'emailjs-com';
+import Faqs from '../../components/Faqs/Faqs';
 
 const Contact = () => {
     const form = useRef();
@@ -68,6 +69,9 @@ const Contact = () => {
                                 </svg>
                                 </div>
                             </div>
+                        </div>
+                        <div className="contact__faq">
+                            <Faqs />
                         </div>
                     </div>
                 </div>
