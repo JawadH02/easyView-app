@@ -40,7 +40,7 @@ nav {
 }
 
 .nav__link--anchor-primary {
-    background-color: #6030b1;
+    background-color: #032D3C;
     padding: 12px 40px;
     border-radius: 50px;
     color: #FFF;
@@ -51,17 +51,17 @@ nav {
     background-color: #FFF;
     padding: 12px 40px;
     border-radius: 50px;
-    color: #6030b1;
+    color: #032D3C;
     transition: all 300ms ease;
 }
 
 .nav__link--anchor-primary:hover {
-    background-color: #FF328F;
+    background-color: #4BE3AC;
     color: #FFF;
 }
 
 .nav__link--anchor-secondary:hover {
-    background-color: #FF328F;
+    background-color: #4BE3AC;
     color: #FFF;
 }
 

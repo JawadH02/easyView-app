@@ -7,8 +7,11 @@ import React from 'react';
 const Home = () => {
     const navigate = useNavigate();
     const [searchValue, setSearchValue] = useState("");
+    const [loading, setLoading] = useState(false);
     function onSearch() {
-        navigate('/search-movies');
+        setTimeout(() => {
+            navigate('/search-movies');
+        }, 1000)
         if (searchValue === "") {
             setSearchValue(null);
             localStorage.removeItem("homeSearch");
@@ -17,11 +20,16 @@ const Home = () => {
         }
 
         localStorage.removeItem("displaySearch");
+        setLoading(true);
     }
     return (
         <>
             <Nav />
-            <Landing onSearch={onSearch} searchValue={searchValue} setSearchValue={setSearchValue} />
+            <Landing 
+                onSearch={onSearch} 
+                searchValue={searchValue} 
+                setSearchValue={setSearchValue}
+                loading={loading} />
         </>
     )
 }

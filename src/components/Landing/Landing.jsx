@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HomeImg from '../../assets/home_undraw.svg';
 import './landing.css';
 
-const Landing = ({ onSearch, setSearchValue, searchValue }) => {
+const Landing = ({ onSearch, setSearchValue, searchValue, loading }) => {
     return (
         <section id="landing">
             <header>
@@ -19,10 +19,15 @@ const Landing = ({ onSearch, setSearchValue, searchValue }) => {
                                 onChange={(event) => setSearchValue(event.target.value)}
                                 onKeyPress={(event) => event.key === 'Enter' && onSearch()} />
                             <div className="landing__search-btn" onClick={() => onSearch()}>
-                                <FontAwesomeIcon icon="search" />
-                                {/* <div class="modal__overlay--loading">
-                                    <FontAwesomeIcon icon="spinner" className="loading-state__spinner" />
-                                </div> */}
+                                {
+                                    !loading ? (
+                                        <FontAwesomeIcon icon="search" />
+                                    ) : (
+                                        <div className="landing-modal__overlay--loading">
+                                            <FontAwesomeIcon icon="spinner" className="loading-state__spinner" />
+                                        </div>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>

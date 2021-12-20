@@ -3,12 +3,12 @@ import './display.css';
 import { useState } from 'react'
 import { Link, Slider } from '@material-ui/core';
 import EmptyDisplay from '../../assets/undraw_searching.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Display = ({ movies }) => {
+const Display = ({ movies, loading }) => {
     const homeSearch = localStorage.getItem("homeSearch");
     const displaySearch = localStorage.getItem("displaySearch");
     const [val, setVal] = useState([1900, 2020]);
-
 
     const handleChange = (e, newVal) => {
         setVal(newVal);
@@ -45,23 +45,32 @@ const Display = ({ movies }) => {
                         </div>
                     </div>
                     <div className="display-movies">
-                        {((homeSearch || displaySearch) !== null && (homeSearch || displaySearch) !== "" && (movies[0]) !== undefined) ? movies
-                            .filter(movie => movie.release_date.split("-")[0] >= val[0] && movie.release_date.split("-")[0] <= val[1])
-                            .slice(0, 8)
-                            .map((movie) =>
-                                <Movie movie={movie} key={movie.id} />
+                        {
+                            !loading ? (
+                                <>
+                                    {((homeSearch || displaySearch) !== null && (homeSearch || displaySearch) !== "" && (movies[0]) !== undefined) ? movies
+                                        .filter(movie => movie.release_date.split("-")[0] >= val[0] && movie.release_date.split("-")[0] <= val[1])
+                                        .slice(0, 8)
+                                        .map((movie) =>
+                                            <Movie movie={movie} key={movie.id} />
+                                        ) : (
+                                        (
+                                            <div className="display__empty">
+                                                <img src={EmptyDisplay} alt="" className="display__empty--img" />
+                                                <h1 className='display__empty--description'>Could not find any matches related to your search.</h1>
+                                                <p className='display__empty--sub-description'>Try searching again</p>
+                                            </div>
+                                        )
+                                    )}
+                                </>
                             ) : (
-                            (
-                                <div className="display__empty">
-                                    <img src={EmptyDisplay} alt="" className="display__empty--img" />
-                                    <h1 className='display__empty--description'>Could not find any matches related to your search.</h1>
-                                    <p className='display__empty--sub-description'>Please change the filter or reset it below</p>
-                                    <Link to="/books">
-                                        <button className="display__btn">Reset Filter</button>
-                                    </Link>
-                                </div>
+                                <>
+                                    <div className="landing-modal__overlay--loading display__spinner">
+                                        <FontAwesomeIcon icon="spinner" className="loading-state__spinner" />
+                                    </div>
+                                </>
                             )
-                        )}
+                        }
                     </div>
                 </div>
             </div>

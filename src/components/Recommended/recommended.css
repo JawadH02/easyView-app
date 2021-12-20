@@ -13,3 +13,7 @@
     max-width: 250px;
     cursor: pointer;
 }
+
+.recommendedMovies__img-row:hover {
+    transform: scale(1.03);
+}

@@ -1,15 +1,17 @@
 import './contact.css';
 import Nav from '../../components/Nav/Nav';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const form = useRef();
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
 
     const contact = (event) => {
         event.preventDefault();
-        
+        setLoading(true);
         emailjs
             .sendForm(
                 'service_cbf58to',
@@ -17,8 +19,11 @@ const Contact = () => {
                 form.current,
                 'user_kIMIfbJhdf4ZjlDLVDNqv'
             ).then((result) => {
+                setLoading(false);
+                setSuccess(true);
                 console.log(result.text)
             }, (error) => {
+                setSuccess(false);
                 console.log(error.text)
             });
     };
@@ -51,11 +56,15 @@ const Contact = () => {
                             Submit
                         </button>
                     </form>
-                    <div className="modal__overlay modal__overlay--loading">
+                    <div className={`modal__overlay modal__overlay--loading ${loading && "modal__overlay--visible"}`}>
                         <FontAwesomeIcon icon="spinner" className="modal__overlay--spinner" />
                     </div>
-                    <div className="modal__overlay modal__overlay--success">
-                        Thanks for the message! Looking forward to speaking to you soon.
+                    <div className={`modal__overlay modal__overlay--success ${success && "modal__overlay--visible"}`}>
+                        <div className="wrapper"> <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                            <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                            <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                        </svg>
+                        </div>
                     </div>
                 </div>
             </section>
