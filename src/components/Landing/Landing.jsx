@@ -17,7 +17,7 @@ const Landing = ({ onSearch, setSearchValue, searchValue, loading }) => {
                                 className="landing__description--input"
                                 value={searchValue || ''}
                                 onChange={(event) => setSearchValue(event.target.value)}
-                                onKeyPress={(event) => event.key === 'Enter' && onSearch()} />
+                                onKeyUp={(event) => event.key === 'Enter' && onSearch()} />
                             <div className="landing__search-btn" onClick={() => onSearch()}>
                                 {
                                     !loading ? (

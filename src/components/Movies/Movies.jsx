@@ -16,7 +16,7 @@ const Movies = ({ searchValue, handleSearch, setSearchValue }) => {
                             className="header__description--input"
                             value={searchValue || ''}
                             onChange={e => setSearchValue(e.target.value)}
-                            onKeyPress={event => event.key === 'Enter' && handleSearch()} />
+                            onKeyUp={event => event.key === 'Enter' && handleSearch()} />
                         <div className="btn--submit">
                             <FontAwesomeIcon icon="search" onClick={() => handleSearch()} />
                         </div>
